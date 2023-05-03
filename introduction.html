@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" class="hydrated">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="This website shows some articles about
+    closures in JavaScript.Closure,It makes it possible for a
+    function to have 'private' variables"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/content.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <title>Article</title>
+  </head>
+  <body id="article" class="introduction">
+    <div class="header">
+      <div class="container">
+        <a href="index.html" aria-label="Article"
+          ><img class="logo" src="images/logo.png" alt=""
+        /></a>
+        <div class="icon-bar"></div>
+        <div class="navigation">
+          <ul class="links">
+            <li class="home"><a class="" href="index.html">Home</a></li>
+            <li class="arrow article">
+              <button class="articl-link">Articles</button>
+              <div class="another-links">
+                <ul class="list-one">
+                  <li>
+                    <a
+                      href="introduction.html"
+                      class="introduction"
+                      aria-label="to read introduction programming artilce click here"
+                      >Introduction in Programming</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="closures.html"
+                      aria-label="to read closures artilce click here"
+                      >Closures</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="module.html"
+                      aria-label="to read module design pattern artilce click here"
+                      >Module Design Pattern</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="hoisting.html"
+                      aria-label="to read hoisting artilce click here"
+                      >Hoisting</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="contact"><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="acount-side">
+            <button class="sign-up">Sign up</button>
+            <div class="search">
+              <input type="search" placeholder="Search" />
+              <ion-icon name="search-outline"></ion-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="allContent">
+      <div class="container">
+        <div class="content">
+          <div class="article">
+            <div class="concept">
+              <div class="flexOne">
+                <h1>Introduction to Programming</h1>
+              </div>
+              <p>Published on january 30, 2023</p>
+              <button>JavaScript</button>
+              <div class="aboutAuthor">
+                <span class="author">A</span>
+                <div class="description">
+                  <span>By <span>AmmarAli</span></span>
+                  <span>Frontend Web Developer </span>
+                </div>
+              </div>
+              <img src="images/shuffle-05.jpg" alt="" />
+              <h2>On Programming</h2>
+              <p class="paragraph">
+                Besides explaining JavaScript, I will introduce the basic
+                principles of programming. Programming, it turns out, is hard.
+                The fundamental rules are simple and clear, but programs built
+                on top of these rules tend to become complex enough to introduce
+                their own rules and complexity. You’re building your own maze,
+                in a way, and you might just get lost in it.
+              </p>
+              <p class="paragraph">
+                There will be times when reading this book feels terribly
+                frustrating. If you are new to programming, there will be a lot
+                of new material to digest. Much of this material will then be
+                combined in ways that require you to make additional
+                connections.
+              </p>
+              <p class="paragraph">
+                It is up to you to make the necessary effort. When you are
+                struggling to follow the book, do not jump to any conclusions
+                about your own capabilities. You are fine—you just need to keep
+                at it. Take a break, reread some material, and make sure you
+                read and understand the example programs and exercises. Learning
+                is hard work, but everything you learn is yours and will make
+                subsequent learning easier.
+              </p>
+              <p class="paragraph">
+                A program is many things. It is a piece of text typed by a
+                programmer, it is the directing force that makes the computer do
+                what it does, it is data in the computer’s memory, yet it
+                controls the actions performed on this same memory. Analogies
+                that try to compare programs to objects we are familiar with
+                tend to fall short. A superficially fitting one is that of a
+                machine—lots of separate parts tend to be involved, and to make
+                the whole thing tick, we have to consider the ways in which
+                these parts interconnect and contribute to the operation of the
+                whole.
+              </p>
+              <p class="paragraph">
+                A computer is a physical machine that acts as a host for these
+                immaterial machines. Computers themselves can do only stupidly
+                straightforward things. The reason they are so useful is that
+                they do these things at an incredibly high speed. A program can
+                ingeniously combine an enormous number of these simple actions
+                to do very complicated things.
+              </p>
+              <p class="paragraph">
+                A program is a building of thought. It is costless to build, it
+                is weightless, and it grows easily under our typing hands.
+              </p>
+              <p class="paragraph">
+                But without care, a program’s size and complexity will grow out
+                of control, confusing even the person who created it. Keeping
+                programs under control is the main problem of programming. When
+                a program works, it is beautiful. The art of programming is the
+                skill of controlling complexity. The great program is
+                subdued—made simple in its complexity.
+              </p>
+              <p class="paragraph">
+                Some programmers believe that this complexity is best managed by
+                using only a small set of well-understood techniques in their
+                programs. They have composed strict rules (“best practices”)
+                prescribing the form programs should have and carefully stay
+                within their safe little zone.
+              </p>
+              <p class="paragraph">
+                This is not only boring, it is ineffective. New problems often
+                require new solutions. The field of programming is young and
+                still developing rapidly, and it is varied enough to have room
+                for wildly different approaches. There are many terrible
+                mistakes to make in program design, and you should go ahead and
+                make them so that you understand them. A sense of what a good
+                program looks like is developed in practice, not learned from a
+                list of rules.
+              </p>
+              <h2>What Is JavaScript?</h2>
+              <p class="paragraph">
+                JavaScript was introduced in 1995 as a way to add programs to
+                web pages in the Netscape Navigator browser. The language has
+                since been adopted by all other major graphical web browsers. It
+                has made modern web applications possible—applications with
+                which you can interact directly without doing a page reload for
+                every action. JavaScript is also used in more traditional
+                websites to provide various forms of interactivity and
+                cleverness.
+              </p>
+              <p class="paragraph">
+                It is important to note that JavaScript has almost nothing to do
+                with the programming language named Java. The similar name was
+                inspired by marketing considerations rather than good judgment.
+                When JavaScript was being introduced, the Java language was
+                being heavily marketed and was gaining popularity. Someone
+                thought it was a good idea to try to ride along on this success.
+                Now we are stuck with the name.
+              </p>
+              <p class="paragraph">
+                After its adoption outside of Netscape, a standard document was
+                written to describe the way the JavaScript language should work
+                so that the various pieces of software that claimed to support
+                JavaScript were actually talking about the same language. This
+                is called the ECMAScript standard, after the Ecma International
+                organization that did the standardization. In practice, the
+                terms ECMAScript and JavaScript can be used interchangeably—they
+                are two names for the same language.
+              </p>
+              <p class="paragraph">
+                There are those who will say terrible things about JavaScript.
+                Many of these things are true. When I was required to write
+                something in JavaScript for the first time, I quickly came to
+                despise it. It would accept almost anything I typed but
+                interpret it in a way that was completely different from what I
+                meant. This had a lot to do with the fact that I did not have a
+                clue what I was doing, of course, but there is a real issue
+                here: JavaScript is ridiculously liberal in what it allows. The
+                idea behind this design was that it would make programming in
+                JavaScript easier for beginners. In actuality, it mostly makes
+                finding problems in your programs harder because the system will
+                not point them out to you.
+              </p>
+              <p class="paragraph">
+                This flexibility also has its advantages, though. It leaves
+                space for a lot of techniques that are impossible in more rigid
+                languages, and as you will see (for example in Chapter 10), it
+                can be used to overcome some of JavaScript’s shortcomings. After
+                learning the language properly and working with it for a while,
+                I have learned to actually like JavaScript.
+              </p>
+              <p class="paragraph">
+                There have been several versions of JavaScript. ECMAScript
+                version 3 was the widely supported version in the time of
+                JavaScript’s ascent to dominance, roughly between 2000 and 2010.
+                During this time, work was underway on an ambitious version 4,
+                which planned a number of radical improvements and extensions to
+                the language. Changing a living, widely used language in such a
+                radical way turned out to be politically difficult, and work on
+                the version 4 was abandoned in 2008, leading to a much less
+                ambitious version 5, which made only some uncontroversial
+                improvements, coming out in 2009. Then in 2015 version 6 came
+                out, a major update that included some of the ideas planned for
+                version 4. Since then we’ve had new, small updates every year.
+              </p>
+              <p class="paragraph">
+                The fact that the language is evolving means that browsers have
+                to constantly keep up, and if you’re using an older browser, it
+                may not support every feature. The language designers are
+                careful to not make any changes that could break existing
+                programs, so new browsers can still run old programs. In this
+                book, I’m using the 2017 version of JavaScript.
+              </p>
+              <p class="paragraph">
+                Web browsers are not the only platforms on which JavaScript is
+                used. Some databases, such as MongoDB and CouchDB, use
+                JavaScript as their scripting and query language. Several
+                platforms for desktop and server programming, most notably the
+                Node.js project (the subject of Chapter 20), provide an
+                environment for programming JavaScript outside of the browser.
+              </p>
+              <div class="box">
+                <div class="lineOne">
+                  <h2>Was this helpful?</h2>
+                  <div>
+                    <div class="opinion">
+                      <a class="btns" href="#">Yes</a>
+                      <a class="btns" href="#">No</a>
+                    </div>
+                    <div class="socialMedia">
+                      <a class="twitter" href="#">
+                        <ion-icon name="logo-twitter"></ion-icon
+                      ></a>
+                      <a class="facbook" href="#">
+                        <ion-icon name="logo-facebook"></ion-icon
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+                <div class="lineTwo">
+                  <h2>Still looking for an answer?</h2>
+                  <div class="flex">
+                    <a class="btns" href="#"> Ask a question</a>
+                    <a class="btns" href="#">Search for more help</a>
+                  </div>
+                </div>
+              </div>
+              <div class="boxComments"></div>
+            </div>
+          </div>
+          <div class="rightSide">
+            <div class="about-righSide">
+              <div class="quote">
+                <p>
+                  When action grows unprofitable, gather information;when
+                  information grows unprofitable, sleep.
+                </p>
+                <span class="author"
+                  >-Ursula K.Le Guin,
+                  <span>The Left Hand of Darkness</span></span
+                >
+              </div>
+              <div class="popularTopics">
+                <div class="relatedTopics">
+                  <h3>RELATED</h3>
+                  <a href="#">An Introduction to Closure</a>
+                  <a href="#">An Introduction to Closure</a>
+                </div>
+                <div class="Topics">
+                  <h3>Popular Topics</h3>
+                  <ul>
+                    <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">TypeScript</a></li>
+                    <li><a href="#">React</a></li>
+                    <li><a href="#">Python</a></li>
+                    <li><a href="#">MySQL</a></li>
+                    <li><a href="#">Bootstrap</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Linux Basics</a></li>
+                    <li><a href="#">SASS</a></li>
+                    <li><a href="#">ECMAScript</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div class="about-footer">
+          <div class="footerLinks">
+            <div class="tutorials">
+              <h2>Tutorials</h2>
+              <ul>
+                <li><a href="#">JavaScript Tutorial</a></li>
+                <li><a href="#">Python 3 Tutorial</a></li>
+                <li><a href="#">C++ Tutorial</a></li>
+                <li><a href="#">Kotlin Tutorial</a></li>
+                <li><a href="#">C# Tutorial</a></li>
+                <li><a href="#">Java Tutorial</a></li>
+                <li><a href="#">C Tutorial</a></li>
+                <li><a href="#">SQL Tutorial</a></li>
+              </ul>
+            </div>
+            <div class="articles">
+              <h2>Articles</h2>
+              <ul>
+                <li><a href="#">Introduction to Programming</a></li>
+                <li><a href="#">Closures</a></li>
+                <li><a href="#">Module Design Pattern</a></li>
+                <li><a href="#">Let</a></li>
+                <li><a href="#">Hoisting</a></li>
+              </ul>
+            </div>
+            <div class="company">
+              <h2>Company</h2>
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Feature Request</a></li>
+                <li><a href="#">Advertising</a></li>
+                <li><a href="#">Blog</a></li>
+              </ul>
+            </div>
+            <div class="contact">
+              <h2>Contact</h2>
+              <ul>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Share your ideas</a></li>
+                <li><a href="#">Report Abuse</a></li>
+                <li><a href="#">Sales</a></li>
+                <li><a href="#">System Status</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="join-us">
+            <h2>Join Our Newsletter</h2>
+            <p>
+              Stay up to date with our news, blog posts, and announcements by
+              subscribing to our Newsletter.
+            </p>
+            <div class="subscribe">
+              <input type="email" placeholder="Enter your email" />
+              <button>Subscribe</button>
+            </div>
+            <div class="socialLinks">
+              <a href="#" class="facebook"
+                ><ion-icon name="logo-facebook"></ion-icon
+              ></a>
+              <a href="#" class="twitter"
+                ><ion-icon name="logo-twitter"></ion-icon
+              ></a>
+              <a href="#" class="linkedin"
+                ><ion-icon name="logo-linkedin"></ion-icon
+              ></a>
+              <a href="#" class="instagram"
+                ><ion-icon name="logo-instagram"></ion-icon
+              ></a>
+              <a href="#" class="youtube"
+                ><ion-icon name="logo-youtube"></ion-icon
+              ></a>
+              <a href="#" class="github"
+                ><ion-icon name="logo-github"></ion-icon
+              ></a>
+            </div>
+          </div>
+          <div class="footer-end">
+            <div class="subfooter-left">
+              <div class="copyRight">
+                ©
+                <span class="year"></span>
+                , made with ❤️ by
+                <span class="nameAuthor">AmmarAli</span>
+              </div>
+            </div>
+            <div class="subfooter-right">
+              <a href="#">Privacy Policy</a>
+              <span>|</span>
+              <a href="#">Cookies</a>
+              <span>|</span>
+              <a href="#">Legal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="code.js"></script>
+  </body>
+</html>

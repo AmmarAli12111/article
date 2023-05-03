@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" class="hydrated">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="This website shows some articles about
+    closures in JavaScript.Closure,It makes it possible for a
+    function to have 'private' variables"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/content.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <title>Article</title>
+  </head>
+  <body id="article" class="hoisting">
+    <div class="header">
+      <div class="container">
+        <a href="index.html" aria-label="Article"
+          ><img class="logo" src="images/logo.png" alt=""
+        /></a>
+        <div class="icon-bar"></div>
+        <div class="navigation">
+          <ul class="links">
+            <li class="home"><a class="" href="index.html">Home</a></li>
+            <li class="arrow article">
+              <button class="articl-link">Articles</button>
+              <div class="another-links">
+                <ul class="list-one">
+                  <li>
+                    <a
+                      href="introduction.html"
+                      aria-label="to read introduction programming artilce click here"
+                      >Introduction in Programming</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="closures.html"
+                      aria-label="to read closures artilce click here"
+                      >Closures</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="module.html"
+                      aria-label="to read module design pattern artilce click here"
+                      >Module Design Pattern</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="hoisting"
+                      href="hoisting.html"
+                      aria-label="to read hoisting artilce click here"
+                      >Hoisting</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="contact"><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="acount-side">
+            <button class="sign-up">Sign up</button>
+            <div class="search">
+              <input type="search" placeholder="Search" />
+              <ion-icon name="search-outline"></ion-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="allContent">
+      <div class="container">
+        <div class="content">
+          <div class="article">
+            <div class="concept">
+              <div class="flexOne">
+                <h1>Hoisting</h1>
+              </div>
+              <p>Published on january 30, 2023</p>
+              <button>JavaScript</button>
+              <div class="aboutAuthor">
+                <span class="author">A</span>
+                <div class="description">
+                  <span>By <span>AmmarAli</span></span>
+                  <span>Frontend Web Developer </span>
+                </div>
+              </div>
+              <img src="images/shuffle-05.jpg" alt="" />
+              <p class="paragraph">
+                JavaScript Hoisting refers to the process whereby the
+                interpreter appears to move the declaration of functions,
+                variables or classes to the top of their scope, prior to
+                execution of the code.
+              </p>
+              <p class="paragraph">
+                Hoisting is not a term normatively defined in the ECMAScript
+                specification. The spec does define a group of declarations as
+                HoistableDeclaration, but this only includes function,
+                function*, async function, and async function* declarations.
+                Hoisting is often considered a feature of var declarations as
+                well, although in a different way. In colloquial terms, any of
+                the following behaviors may be regarded as hoisting:
+              </p>
+              <p class="paragraph">
+                -Being able to use a variable's value in its scope before the
+                line it is declared. ("Value hoisting")
+              </p>
+              <p class="paragraph">
+                -Being able to reference a variable in its scope before the line
+                it is declared, without throwing a ReferenceError, but the value
+                is always undefined. ("Declaration hoisting")
+              </p>
+              <p class="paragraph">
+                -The declaration of the variable causes behavior changes in its
+                scope before the line in which it is declared.
+              </p>
+              <p class="paragraph">
+                The four function declarations above are hoisted with type 1
+                behavior; var declaration is hoisted with type 2 behavior; let,
+                const, and class declarations (also collectively called lexical
+                declarations) are hoisted with type 3 behavior.
+              </p>
+              <p class="paragraph">
+                Some prefer to see let, const, and class as non-hoisting,
+                because the temporal dead zone strictly forbids any use of the
+                variable before its declaration. This dissent is fine, since
+                hoisting is not a universally-agreed term. However, the temporal
+                dead zone can cause other observable changes in its scope, which
+                suggests there's some form of hoisting:
+              </p>
+              <div class="aboutCode">
+                <pre><code><span class="Keyword">const</span> x = <span class="string">1</span> <span class="punctuation">;</span>
+<span class="punctuation">{</span>
+  console<span class="punctuation">.</span><span class="function">log</span><span class="punctuation">(</span>x<span class="punctuation">); // ReferenceError</span>
+  <span class="Keyword">const</span> x = <span class="string">2</span><span class="punctuation">;</span>
+<span class="punctuation">}</span></code></pre>
+                <div class="copyBtn">Copy</div>
+              </div>
+              <p class="paragraph">
+                If the const x = 2 declaration is not hoisted at all (as in, it
+                only comes into effect when it's executed), then the
+                console.log(x) statement should be able to read the x value from
+                the upper scope. However, because the const declaration still
+                "taints" the entire scope it's defined in, the console.log(x)
+                statement reads the x from the const x = 2 declaration instead,
+                which is not yet initialized, and throws a ReferenceError.
+                Still, it may be more useful to characterize lexical
+                declarations as non-hoisting, because from a utilitarian
+                perspective, the hoisting of these declarations doesn't bring
+                any meaningful features.
+              </p>
+              <p class="paragraph">
+                Note that the following is not a form of hoisting:
+              </p>
+              <div class="aboutCode">
+                <pre><code><span class="punctuation">{</span>
+  <span class="Keyword">var</span> x = <span class="string">1</span> <span class="punctuation">;</span>
+<span class="punctuation">}</span>
+console<span class="punctuation">.</span><span class="function">log</span><span class="punctuation">(</span>x<span class="punctuation">); // 1</span></code></pre>
+                <div class="copyBtn">Copy</div>
+              </div>
+              <p class="paragraph">
+                There's no "access before declaration" here; it's simply because
+                var declarations are not scoped to blocks.
+              </p>
+              <div class="box">
+                <div class="lineOne">
+                  <h2>Was this helpful?</h2>
+                  <div>
+                    <div class="opinion">
+                      <a class="btns" href="#">Yes</a>
+                      <a class="btns" href="#">No</a>
+                    </div>
+                    <div class="socialMedia">
+                      <a class="twitter" href="#">
+                        <ion-icon name="logo-twitter"></ion-icon
+                      ></a>
+                      <a class="facbook" href="#">
+                        <ion-icon name="logo-facebook"></ion-icon
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+                <div class="lineTwo">
+                  <h2>Still looking for an answer?</h2>
+                  <div class="flex">
+                    <a class="btns" href="#"> Ask a question</a>
+                    <a class="btns" href="#">Search for more help</a>
+                  </div>
+                </div>
+              </div>
+              <div class="boxComments"></div>
+            </div>
+          </div>
+          <div class="rightSide">
+            <div class="about-righSide">
+              <div class="quote">
+                <p>
+                  When action grows unprofitable, gather information;when
+                  information grows unprofitable, sleep.
+                </p>
+                <span class="author"
+                  >-Ursula K.Le Guin,
+                  <span>The Left Hand of Darkness</span></span
+                >
+              </div>
+              <div class="popularTopics">
+                <div class="relatedTopics">
+                  <h3>RELATED</h3>
+                  <a href="#">An Introduction to Closure</a>
+                  <a href="#">An Introduction to Closure</a>
+                </div>
+                <div class="Topics">
+                  <h3>Popular Topics</h3>
+                  <ul>
+                    <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">TypeScript</a></li>
+                    <li><a href="#">React</a></li>
+                    <li><a href="#">Python</a></li>
+                    <li><a href="#">MySQL</a></li>
+                    <li><a href="#">Bootstrap</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Linux Basics</a></li>
+                    <li><a href="#">SASS</a></li>
+                    <li><a href="#">ECMAScript</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div class="about-footer">
+          <div class="footerLinks">
+            <div class="tutorials">
+              <h2>Tutorials</h2>
+              <ul>
+                <li><a href="#">JavaScript Tutorial</a></li>
+                <li><a href="#">Python 3 Tutorial</a></li>
+                <li><a href="#">C++ Tutorial</a></li>
+                <li><a href="#">Kotlin Tutorial</a></li>
+                <li><a href="#">C# Tutorial</a></li>
+                <li><a href="#">Java Tutorial</a></li>
+                <li><a href="#">C Tutorial</a></li>
+                <li><a href="#">SQL Tutorial</a></li>
+              </ul>
+            </div>
+            <div class="articles">
+              <h2>Articles</h2>
+              <ul>
+                <li><a href="#">Introduction to Programming</a></li>
+                <li><a href="#">Closures</a></li>
+                <li><a href="#">Module Design Pattern</a></li>
+                <li><a href="#">Hoisting</a></li>
+              </ul>
+            </div>
+            <div class="company">
+              <h2>Company</h2>
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Feature Request</a></li>
+                <li><a href="#">Advertising</a></li>
+                <li><a href="#">Blog</a></li>
+              </ul>
+            </div>
+            <div class="contact">
+              <h2>Contact</h2>
+              <ul>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Share your ideas</a></li>
+                <li><a href="#">Report Abuse</a></li>
+                <li><a href="#">Sales</a></li>
+                <li><a href="#">System Status</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="join-us">
+            <h2>Join Our Newsletter</h2>
+            <p>
+              Stay up to date with our news, blog posts, and announcements by
+              subscribing to our Newsletter.
+            </p>
+            <div class="subscribe">
+              <input type="email" placeholder="Enter your email" />
+              <button>Subscribe</button>
+            </div>
+            <div class="socialLinks">
+              <a href="#" class="facebook"
+                ><ion-icon name="logo-facebook"></ion-icon
+              ></a>
+              <a href="#" class="twitter"
+                ><ion-icon name="logo-twitter"></ion-icon
+              ></a>
+              <a href="#" class="linkedin"
+                ><ion-icon name="logo-linkedin"></ion-icon
+              ></a>
+              <a href="#" class="instagram"
+                ><ion-icon name="logo-instagram"></ion-icon
+              ></a>
+              <a href="#" class="youtube"
+                ><ion-icon name="logo-youtube"></ion-icon
+              ></a>
+              <a href="#" class="github"
+                ><ion-icon name="logo-github"></ion-icon
+              ></a>
+            </div>
+          </div>
+          <div class="footer-end">
+            <div class="subfooter-left">
+              <div class="copyRight">
+                ©
+                <span class="year"></span>
+                , made with ❤️ by
+                <span class="nameAuthor">AmmarAli</span>
+              </div>
+            </div>
+            <div class="subfooter-right">
+              <a href="#">Privacy Policy</a>
+              <span>|</span>
+              <a href="#">Cookies</a>
+              <span>|</span>
+              <a href="#">Legal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="code.js"></script>
+  </body>
+</html>

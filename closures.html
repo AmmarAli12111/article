@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en" class="hydrated">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="This website shows some articles about
+    closures in JavaScript.Closure,It makes it possible for a
+    function to have 'private' variables"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/content.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <title>Article</title>
+  </head>
+  <body id="article" class="closures">
+    <div class="header">
+      <div class="container">
+        <a href="index.html" aria-label="Article"
+          ><img class="logo" src="images/logo.png" alt=""
+        /></a>
+        <div class="icon-bar"></div>
+        <div class="navigation">
+          <ul class="links">
+            <li class="home"><a class="" href="index.html">Home</a></li>
+            <li class="arrow article">
+              <button class="articl-link">Articles</button>
+              <div class="another-links">
+                <ul class="list-one">
+                  <li>
+                    <a
+                      href="introduction.html"
+                      aria-label="to read introduction programming artilce click here"
+                      >Introduction in Programming</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="closures"
+                      href="closures.html"
+                      aria-label="to read closures artilce click here"
+                      >Closures</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="module.html"
+                      aria-label="to read module design pattern artilce click here"
+                      >Module Design Pattern</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="hoisting.html"
+                      aria-label="to read hoisting artilce click here"
+                      >Hoisting</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="contact"><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="acount-side">
+            <button class="sign-up">Sign up</button>
+            <div class="search">
+              <input type="search" placeholder="Search" />
+              <ion-icon name="search-outline"></ion-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="allContent">
+      <div class="container">
+        <div class="content">
+          <div class="article">
+            <div class="concept">
+              <div class="flexOne">
+                <h1>Closures</h1>
+              </div>
+              <p>Published on january 30, 2023</p>
+              <button>JavaScript</button>
+              <div class="aboutAuthor">
+                <span class="author">A</span>
+                <div class="description">
+                  <span>By <span>AmmarAli</span></span>
+                  <span>Frontend Web Developer </span>
+                </div>
+              </div>
+              <img src="images/shuffle-05.jpg" alt="" />
+              <h2>Closure</h2>
+              <p class="paragraph">
+                A closure is the combination of a function bundled together
+                (enclosed) with references to its surrounding state (the lexical
+                environment). In other words, a closure gives you access to an
+                outer function's scope from an inner function. In JavaScript,
+                closures are created every time a function is created, at
+                function creation time.
+              </p>
+              <h2>Lexical scoping</h2>
+              <p class="paragraph">Consider the following example code:</p>
+              <div class="aboutCode">
+                <pre><code><span class="Keyword">function</span> <span class="function">init</span><span class="punctuation">()</span> <span class="punctuation">{</span>
+  <span class="Keyword">var</span> name = <span class="string">"Mozilla"</span><span class="punctuation">;</span> <span class="comment">// name is a local variable created by init</span>
+  <sapn class="Keyword">function</sapn> <span class="function">displayName</span><span class="punctuation">()</span> <span class="punctuation">{</span>
+    <span class="comment">// displayName() is the inner function, that forms the closure</span> 
+    console<span class="punctuation">.</span><span class="function">log</span><span class="punctuation">(</span>name<span class="punctuation">)</span><span class="punctuation">;</span> <span class="comment">// use variable declared in the parent function</span>
+    <span class="punctuation">}</span>
+  <span class="function">displayName</span><span class="punctuation">()</span><span class="punctuation">;</span>
+<span class="punctuation">}</span>
+<span class="function">init</span><span class="punctuation">()</span><span class="punctuation">;</span></code></pre>
+                <div class="copyBtn">Copy</div>
+              </div>
+              <p class="paragraph">
+                <span class="importantWord">init()</span> creates a local
+                variable called <span class="importantWord">name</span> and a
+                function called
+                <span class="importantWord">displayName()</span>. The
+                <span class="importantWord">displayName()</span> function is an
+                inner function that is defined inside
+                <span class="importantWord">init()</span> and is available only
+                within the body of the
+                <span class="importantWord">init()</span> function. Note that
+                the <span class="importantWord">displayName()</span> function
+                has no local variables of its own. However, since inner
+                functions have access to the variables of outer functions,
+                <span class="importantWord">displayName()</span> can access the
+                variable <span class="importantWord">name</span> declared in the
+                parent function, <span class="importantWord">init()</span>.
+              </p>
+              <p class="paragraph">
+                Run the code using this
+                <a
+                  class="linkPr"
+                  href="https://jsfiddle.net/3dxck52m/"
+                  target="_blank"
+                  >JSFiddle link</a
+                >
+                and notice that the
+                <span class="importantWord">console.log()</span> statement
+                within the
+                <span class="importantWord">displayName()</span> function
+                successfully displays the value of the
+                <span class="importantWord">name</span> variable, which is
+                declared in its parent function. This is an example of lexical
+                scoping, which describes how a parser resolves variable names
+                when functions are nested. The word lexical refers to the fact
+                that lexical scoping uses the location where a variable is
+                declared within the source code to determine where that variable
+                is available. Nested functions have access to variables declared
+                in their outer scope.
+              </p>
+              <p class="paragraph">
+                In this particular example, the scope is called a function
+                scope, because the variable is accessible and only accessible
+                within the function body where it's declared.
+              </p>
+              <h2>Scoping with let and const</h2>
+              <p class="paragraph">
+                Traditionally (before ES6), JavaScript only had two kinds of
+                scopes: function scope and global scope. Variables declared with
+                <span class="importantWord">var</span> are either
+                function-scoped or global-scoped, depending on whether they are
+                declared within a function or outside a function. This can be
+                tricky, because blocks with curly braces do not create scopes:
+              </p>
+              <div class="aboutCode">
+                <pre><code><span class="Keyword">if</span> <span class="punctuation">(</span>Math<span class="punctuation">.</span><span class="function">random</span><span class="punctuation">()</span> > <span class="string">0.5</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+  <span class="Keyword">var</span> x = <span class="string">1</span><span class="punctuation">;</span>
+<span class="punctuation">}</span> <span class="Keyword">else</span> <span class="punctuation">{</span>
+  <span class="Keyword">var</span> x = <span class="string">2</span><span class="punctuation">;</span>
+<span class="punctuation">}</span>
+console<span class="puctuation">.</span><span class="function">log</span><span class="punctuation">(</span>x<span class="punctuation">)</span><span class="punctuation">;</span></code></pre>
+                <div class="copyBtn">Copy</div>
+              </div>
+              <p class="paragraph">
+                For people from other languages (e.g. C, Java) where blocks
+                create scopes, the above code should throw an error on the
+                <span class="importantWord">console.log</span> line, because we
+                are outside the scope of <span class="importantWord">x</span> in
+                either block. However, because blocks don't create scopes for
+                <span class="importantWord">var</span>, the
+                <span class="importantWord">var</span> statements here actually
+                create a global variable. There is also
+                <a
+                  href="#creating_closures_in_loops_a_common_mistake"
+                  class="linkPr"
+                  target="_blank"
+                  >a practical example</a
+                >
+                introduced below that illustrates how this can cause actual bugs
+                when combined with closures.
+              </p>
+              <p class="paragraph">
+                In ES6, JavaScript introduced the
+                <span class="importantWord">let</span> and
+                <span class="importantWord">const</span> declarations, which,
+                among other things like
+                <a href="let.index" class="linkPr">temporal dead zones</a>,
+                allow you to create block-scoped variables.
+              </p>
+              <div class="aboutCode">
+                <pre><code><span class="Keyword">if</span> <span class="punctuation">(</span>Math<span class="punctuation">.</span><span class="function">random</span><span class="punctuation">()</span> > <span class="string">0.5</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+  <span class="Keyword">const</span> x = <span class="string">1</span><span class="punctuation">;</span>
+<span class="punctuation">}</span> <span class="Keyword">else</span> <span class="punctuation">{</span>
+  <span class="Keyword">const</span> x = <span class="string">2</span><span class="punctuation">;</span>
+<span class="punctuation">}</span>
+console<span class="puctuation">.</span><span class="function">log</span><span class="punctuation">(</span>x<span class="punctuation">)</span><span class="punctuation">;</span> <span class="comment">// ReferenceError: x is not defined</span></code></pre>
+                <div class="copyBtn">Copy</div>
+              </div>
+              <p class="paragraph">
+                In essence, blocks are finally treated as scopes in ES6, but
+                only if you declare variables with
+                <span class="importantWord">let</span> or
+                <span class="importantWord">const</span>. In addition, ES6
+                introduced
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules"
+                  class="linkPr"
+                  target="_blank"
+                  >modules</a
+                >, which introduced another kind of scope. Closures are able to
+                capture variables in all these scopes, which we will introduce
+                later.
+              </p>
+              <h2>Closure</h2>
+              <p class="paragraph">Consider the following code example:</p>
+              <div class="aboutCode">
+                <pre><code><span class="Keyword">function</span> <span class="function">makeFunc</span><span class="punctuation">()</span> <span class="punctuation">{</span>
+  <span class="Keyword">const</span> name = <span class="string">"Mozilla"</span><span class="punctuation">;</span>
+  <span class="Keyword">function</span> <span class="function">displayName</span><span class="punctuation">()</span> <span class="punctuation">{</span>
+    console<span class="punctuation">.</span><span class="function">log</span><span class="punctuation">(</span>name<span class="punctuation">);</span>
+  <span class="punctuation">}</span>
+  <span class="Keyword">return</span> <span class="function">displayName</span><span class="punctuation">;</span>
+<span class="punctuation">}</span>
+
+<span class="Keyword">const</span> myFunc = <span class="function">makeFunc</span><span class="punctuation">();</span>
+<span class="function">myFunc</span><span class="punctuation">();</span></code></pre>
+                <div class="copyBtn">Copy</div>
+              </div>
+              <p class="paragraph">
+                Running this code has exactly the same effect as the previous
+                example of the
+                <span class="importantWord">init()</span> function above. What's
+                different (and interesting) is that the
+                <span class="importantWord">displayName()</span> inner function
+                is returned from the outer function before being executed.
+              </p>
+              <p class="paragraph">
+                At first glance, it might seem unintuitive that this code still
+                works. In some programming languages, the local variables within
+                a function exist for just the duration of that function's
+                execution. Once
+                <span class="importantWord">makeFunc()</span> finishes
+                executing, you might expect that the
+                <span class="importantWord">name</span> variable would no longer
+                be accessible. However, because the code still works as
+                expected, this is obviously not the case in JavaScript.
+              </p>
+              <p class="paragraph">
+                The reason is that functions in JavaScript form closures. A
+                closure is the combination of a function and the lexical
+                environment within which that function was declared. This
+                environment consists of any local variables that were in-scope
+                at the time the closure was created. In this case,
+                <span class="importantWord">myFunc</span> is a reference to the
+                instance of the function
+                <span class="importantWord">displayName</span> that is created
+                when <span class="importantWord">myFunc</span> is run. The
+                instance of
+                <span class="importantWord">displayName</span> maintains a
+                reference to its lexical environment, within which the variable
+                <span class="importantWord">name</span> exists. For this reason,
+                when <span class="importantWord">myFunc</span> is invoked, the
+                variable <span class="importantWord">name</span> remains
+                available for use, and "Mozilla" is passed to
+                <span class="importantWord">console.log</span>.
+              </p>
+              <p class="paragraph">
+                Here's a slightly more interesting example—a
+                <span class="importantWord">makeAdder</span> function:
+              </p>
+              <div class="aboutCode">
+                <pre><code><span class="Keyword">function</span> <span class="function">makeAdder</span><span class="punctuation">(</span>x<span class="punctuation">)</span> <span class="punctuation">{</span>
+  <span class="Keyword">return</span> <span class="Keyword">function</span> <span class="punctuation">(</span>y <span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="Keyword">return</span> x + y<span class="punctuation">;</span>
+  <span class="punctuation">};</span>
+<span class="punctuation">}</span>
+
+<span class="Keyword">const</span> add5 = <span class="function">makeAdder</span><span class="punctuation">(</span>5<span class="punctuation">);</span>
+<span class="Keyword">const</span> add10 = <span class="function">makeAdder</span><span class="punctuation">(</span>10<span class="punctuation">);</span>
+
+console<span class="punctuation">.</span><span class="function">log</span><span class="punctuation">(</span><span class="function">add5</span><span class="punctuation">(</span>2<span class="punctuation">)); // 7</span>
+console<span class="punctuation">.</span><span class="function">log</span><span class="punctuation">(</span><span class="function">add5</span><span class="punctuation">(</span>2<span class="punctuation">)); // 12</span></code></pre>
+                <div class="copyBtn">Copy</div>
+              </div>
+              <p class="paragraph">
+                In this example, we have defined a function
+                <span class="importantWord">makeAdder(x)</span>, that takes a
+                single argument <span class="importantWord">x</span>, and
+                returns a new function. The function it returns takes a single
+                argument <span class="importantWord">y</span>, and returns the
+                sum of <span class="importantWord">x</span> and
+                <span class="importantWord">y</span>.
+              </p>
+              <p class="paragraph">
+                In essence, <span class="importantWord">makeAdder</span> is a
+                function factory. It creates functions that can add a specific
+                value to their argument. In the above example, the function
+                factory creates two new functions—one that adds five to its
+                argument, and one that adds 10.
+              </p>
+              <p class="paragraph">
+                <span class="importantWord">add5</span> and
+                <span class="importantWord">add10</span> both form closures.
+                They share the same function body definition, but store
+                different lexical environments. In
+                <span class="importantWord">add5</span>'s lexical environment, x
+                is 5, while in the lexical environment for
+                <span class="importantWord">add10</span>,
+                <span class="importantWord">x</span> is 10.
+              </p>
+              <h2>Practical closures</h2>
+              <p class="paragraph">
+                Closures are useful because they let you associate data (the
+                lexical environment) with a function that operates on that data.
+                This has obvious parallels to object-oriented programming, where
+                objects allow you to associate data (the object's properties)
+                with one or more methods.
+              </p>
+              <p class="paragraph">
+                Consequently, you can use a closure anywhere that you might
+                normally use an object with only a single method.
+              </p>
+              <p class="paragraph">
+                Situations where you might want to do this are particularly
+                common on the web. Much of the code written in front-end
+                JavaScript is event-based. You define some behavior, and then
+                attach it to an event that is triggered by the user (such as a
+                click or a keypress). The code is attached as a callback (a
+                single function that is executed in response to the event).
+              </p>
+              <p class="paragraph">
+                For instance, suppose we want to add buttons to a page to adjust
+                the text size. One way of doing this is to specify the font-size
+                of the <span class="importantWord">body</span> element (in
+                pixels), and then set the size of the other elements on the page
+                (such as headers) using the relative
+                <span class="importantWord">em</span> unit:
+              </p>
+              <div class="aboutCode">
+                <pre><code><span class="Keyword">body</span> <span class="punctuation">{</span>
+  <span class="function">font-family</span><span class="punctuation">:</span> Helvetica<span class="punctuation">,</span> Arial<span class="punctuation">,</span> sans-serif<span class="punctuation">;</span>
+  <span class="function">font-size</span><span class="punctuation">:</span> 12px<span class="punctuation">;</span>
+<span class="punctuation">}</span>
+
+<span class="Keyword">h1</span> <span class="punctuation">{</span>
+  <span class="function">font-size</span><span class="punctuation">:</span> 1.5em<span class="punctuation">;</span>
+<span class="punctuation">}</span>
+
+<span class="Keyword">h2</span> <span class="punctuation">{</span>
+  <span class="function">font-size</span><span class="punctuation">:</span> 1.2em<span class="punctuation">;</span>
+<span class="punctuation">}</span></code></pre>
+                <div class="copyBtn">Copy</div>
+              </div>
+              <p class="paragraph">
+                Such interactive text size buttons can change the
+                <span class="importantWord">font-size</span>
+                property of the <span class="importantWord">body</span> element,
+                and the adjustments are picked up by other elements on the page
+                thanks to the relative units.
+              </p>
+              <p class="paragraph">Here's the JavaScript:</p>
+              <div class="aboutCode">
+                <pre><code><span class="Keyword">function</span> <span class="function">makeSizer</span>(size) {
+  <span class="Keyword">return</span> <span class="Keyword">function</span> <span class="punctuation">() {</span>
+    document<span class="punctuation">.</span>body<span class="punctuation">.</span>style<span class="punctuation">.</span>fontSize = <span class="punctuation">`${</span>size<span class="punctuation">}</span><span class="template-string">px</span><span class="punctuation">`;</span>
+  <span class="punctuation">};</span>
+<span class="punctuation">}</span>
+
+<span class="Keyword">const</span> size12 = <span class="function">makeSizer</span><span class="punctuation">(</span>12<span class="punctuation">)</span><span class="punctuation">;</span>
+<span class="Keyword">const</span> size14 = <span class="function">makeSizer</span><span class="punctuation">(</span>14<span class="punctuation">)</span><span class="punctuation">;</span>
+<span class="Keyword">const</span> size16 = <span class="function">makeSizer</span><span class="punctuation">(</span>16<span class="punctuation">)</span><span class="punctuation">;</span></code></pre>
+                <div class="copyBtn">Copy</div>
+              </div>
+              <p class="paragraph">
+                <span class="importantWord">size12</span>,
+                <span class="importantWord">size14</span>, and
+                <span class="importantWord">size16</span> are now functions that
+                resize the body text to 12, 14, and 16 pixels, respectively. You
+                can attach them to buttons (in this case hyperlinks) as
+                demonstrated in the following code example.
+              </p>
+              <div class="aboutCode">
+                <pre><code>document<span class="punctuation">.</span><span class="function">getElementById</span><span class="punctuation">(</span><span class="string">"size-12"</span><span class="punctuation">)</span><span class="punctuation">.</span>onclick = size12<span class="punctuation">;</span>
+document<span class="punctuation">.</span><span class="function">getElementById</span><span class="punctuation">(</span><span class="string">"size-14"</span><span class="punctuation">)</span><span class="punctuation">.</span>onclick = size14<span class="punctuation">;</span>
+document<span class="punctuation">.</span><span class="function">getElementById</span><span class="punctuation">(</span><span class="string">"size-16"</span><span class="punctuation">)</span><span class="punctuation">.</span>onclick = size16<span class="punctuation">;</span></code></pre>
+                <div class="copyBtn">Copy</div>
+              </div>
+              <div class="aboutCode">
+                <pre><code><span class="punctuation"><</span><span class="string">button</span><span class="punctuation">></span> <span class="function">id</span><span class="punctuation">="</span><span class="string">size-12</span><span class="punctuation">"</span><span class="punctuation">></span>12<span class="punctuation"><</span><span class="string"><span class="punctuation">/</span>button</span><span class="punctuation">></span>
+<span class="punctuation"><</span><span class="string">button</span><span class="punctuation">></span> <span class="function">id</span><span class="punctuation">="</span><span class="string">size-14</span><span class="punctuation">"</span><span class="punctuation">></span>14<span class="punctuation"><</span><span class="string"><span class="punctuation">/</span>button</span><span class="punctuation">></span>
+<span class="punctuation"><</span><span class="string">button</span><span class="punctuation">></span> <span class="function">id</span><span class="punctuation">="</span><span class="string">size-16</span><span class="punctuation">"</span><span class="punctuation">></span>16<span class="punctuation"><</span><span class="string"><span class="punctuation">/</span>button</span><span class="punctuation">></span></code></pre>
+                <div class="copyBtn">Copy</div>
+              </div>
+              <p class="paragraph">
+                Run the code using
+                <a
+                  href="https://jsfiddle.net/hotae160/"
+                  class="linkPr"
+                  target="_blank"
+                  >JSFiddle</a
+                >.
+              </p>
+              <div class="box">
+                <div class="lineOne">
+                  <h2>Was this helpful?</h2>
+                  <div>
+                    <div class="opinion">
+                      <a class="btns" href="#">Yes</a>
+                      <a class="btns" href="#">No</a>
+                    </div>
+                    <div class="socialMedia">
+                      <a class="twitter" href="#">
+                        <ion-icon name="logo-twitter"></ion-icon
+                      ></a>
+                      <a class="facbook" href="#">
+                        <ion-icon name="logo-facebook"></ion-icon
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+                <div class="lineTwo">
+                  <h2>Still looking for an answer?</h2>
+                  <div class="flex">
+                    <a class="btns" href="#"> Ask a question</a>
+                    <a class="btns" href="#">Search for more help</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="rightSide">
+            <div class="about-righSide">
+              <div class="quote">
+                <p>
+                  When action grows unprofitable, gather information;when
+                  information grows unprofitable, sleep.
+                </p>
+                <span class="author"
+                  >-Ursula K.Le Guin,
+                  <span>The Left Hand of Darkness</span></span
+                >
+              </div>
+              <div class="popularTopics">
+                <div class="relatedTopics">
+                  <h3>RELATED</h3>
+                  <a href="#">An Introduction to Closure</a>
+                  <a href="#">An Introduction to Closure</a>
+                </div>
+                <div class="Topics">
+                  <h3>Popular Topics</h3>
+                  <ul>
+                    <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">TypeScript</a></li>
+                    <li><a href="#">React</a></li>
+                    <li><a href="#">Python</a></li>
+                    <li><a href="#">MySQL</a></li>
+                    <li><a href="#">Bootstrap</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Linux Basics</a></li>
+                    <li><a href="#">SASS</a></li>
+                    <li><a href="#">ECMAScript</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div class="about-footer">
+          <div class="footerLinks">
+            <div class="tutorials">
+              <h2>Tutorials</h2>
+              <ul>
+                <li><a href="#">JavaScript Tutorial</a></li>
+                <li><a href="#">Python 3 Tutorial</a></li>
+                <li><a href="#">C++ Tutorial</a></li>
+                <li><a href="#">Kotlin Tutorial</a></li>
+                <li><a href="#">C# Tutorial</a></li>
+                <li><a href="#">Java Tutorial</a></li>
+                <li><a href="#">C Tutorial</a></li>
+                <li><a href="#">SQL Tutorial</a></li>
+              </ul>
+            </div>
+            <div class="articles">
+              <h2>Articles</h2>
+              <ul>
+                <li><a href="#">Introduction to Programming</a></li>
+                <li><a href="#">Closures</a></li>
+                <li><a href="#">Module Design Pattern</a></li>
+                <li><a href="#">Let</a></li>
+                <li><a href="#">Hoisting</a></li>
+              </ul>
+            </div>
+            <div class="company">
+              <h2>Company</h2>
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Feature Request</a></li>
+                <li><a href="#">Advertising</a></li>
+                <li><a href="#">Blog</a></li>
+              </ul>
+            </div>
+            <div class="contact">
+              <h2>Contact</h2>
+              <ul>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Share your ideas</a></li>
+                <li><a href="#">Report Abuse</a></li>
+                <li><a href="#">Sales</a></li>
+                <li><a href="#">System Status</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="join-us">
+            <h2>Join Our Newsletter</h2>
+            <p>
+              Stay up to date with our news, blog posts, and announcements by
+              subscribing to our Newsletter.
+            </p>
+            <div class="subscribe">
+              <input type="email" placeholder="Enter your email" />
+              <button>Subscribe</button>
+            </div>
+            <div class="socialLinks">
+              <a href="#" class="facebook"
+                ><ion-icon name="logo-facebook"></ion-icon
+              ></a>
+              <a href="#" class="twitter"
+                ><ion-icon name="logo-twitter"></ion-icon
+              ></a>
+              <a href="#" class="linkedin"
+                ><ion-icon name="logo-linkedin"></ion-icon
+              ></a>
+              <a href="#" class="instagram"
+                ><ion-icon name="logo-instagram"></ion-icon
+              ></a>
+              <a href="#" class="youtube"
+                ><ion-icon name="logo-youtube"></ion-icon
+              ></a>
+              <a href="#" class="github"
+                ><ion-icon name="logo-github"></ion-icon
+              ></a>
+            </div>
+          </div>
+          <div class="footer-end">
+            <div class="subfooter-left">
+              <div class="copyRight">
+                ©
+                <span class="year"></span>
+                , made with ❤️ by
+                <span class="nameAuthor">AmmarAli</span>
+              </div>
+            </div>
+            <div class="subfooter-right">
+              <a href="#">Privacy Policy</a>
+              <span>|</span>
+              <a href="#">Cookies</a>
+              <span>|</span>
+              <a href="#">Legal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="code.js"></script>
+  </body>
+</html>

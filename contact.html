@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" class="hydrated">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="This website shows some articles about
+    closures in JavaScript.Closure,It makes it possible for a
+    function to have 'private' variables"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/content.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <title>Article</title>
+  </head>
+  <body id="contact">
+    <div class="header">
+      <div class="container">
+        <a href="index.html" aria-label="Article"
+          ><img class="logo" src="images/logo.png" alt=""
+        /></a>
+        <div class="icon-bar"></div>
+        <div class="navigation">
+          <ul class="links">
+            <li class="home"><a class="" href="index.html">Home</a></li>
+            <li class="arrow">
+              <button class="articl-link">Articles</button>
+              <div class="another-links">
+                <ul class="list-one">
+                  <li>
+                    <a
+                      href="introduction.html"
+                      aria-label="to read introduction programming artilce click here"
+                      >Introduction in Programming</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="closures.html"
+                      aria-label="to read closures artilce click here"
+                      >Closures</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="module.html"
+                      aria-label="to read module design pattern artilce click here"
+                      >Module Design Pattern</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="hoisting.html"
+                      aria-label="to read hoisting artilce click here"
+                      >Hoisting</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="contact"><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="acount-side">
+            <button class="sign-up">Sign up</button>
+            <div class="search">
+              <input type="search" placeholder="Search" />
+              <ion-icon name="search-outline"></ion-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="contact-section">
+        <div class="contact-details">
+          <h1>Contact Us</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse rerum
+            optio error autem libero eius eveniet accusamus sunt.
+          </p>
+          <div class="contact-group">
+            <h6>EGY</h6>
+            <div class="local">
+              <ion-icon name="location-outline"></ion-icon>
+              <p>Egypt, Giza, Inside The Sphinx, Room Number 220</p>
+            </div>
+            <div class="mail">
+              <ion-icon name="mail-outline"></ion-icon>
+              <p>amar.ali4546@gmail.com</p>
+            </div>
+            <div class="tel">
+              <ion-icon name="call-outline"></ion-icon>
+              <p>+20 1208762488</p>
+            </div>
+          </div>
+          <ul class="social-links">
+            <li><ion-icon name="logo-facebook"></ion-icon></li>
+            <li><ion-icon name="logo-twitter"></ion-icon></li>
+            <li><ion-icon name="logo-linkedin"></ion-icon></li>
+            <li><ion-icon name="logo-instagram"></ion-icon></li>
+          </ul>
+        </div>
+        <div class="contact-form">
+          <h1>Get in touch with us</h1>
+          <form>
+            <input type="text" placeholder="Enter your name" />
+            <input type="text" placeholder="Enter Email Address" />
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="Enter message"
+            ></textarea>
+            <button type="submit">submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div class="about-footer">
+          <div class="footerLinks">
+            <div class="tutorials">
+              <h2>Tutorials</h2>
+              <ul>
+                <li><a href="#">JavaScript Tutorial</a></li>
+                <li><a href="#">Python 3 Tutorial</a></li>
+                <li><a href="#">C++ Tutorial</a></li>
+                <li><a href="#">Kotlin Tutorial</a></li>
+                <li><a href="#">C# Tutorial</a></li>
+                <li><a href="#">Java Tutorial</a></li>
+                <li><a href="#">C Tutorial</a></li>
+                <li><a href="#">SQL Tutorial</a></li>
+              </ul>
+            </div>
+            <div class="articles">
+              <h2>Articles</h2>
+              <ul>
+                <li><a href="#">Introduction to Programming</a></li>
+                <li><a href="#">Closures</a></li>
+                <li><a href="#">Module Design Pattern</a></li>
+                <li><a href="#">Let</a></li>
+                <li><a href="#">Hoisting</a></li>
+              </ul>
+            </div>
+            <div class="company">
+              <h2>Company</h2>
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Feature Request</a></li>
+                <li><a href="#">Advertising</a></li>
+                <li><a href="#">Blog</a></li>
+              </ul>
+            </div>
+            <div class="contact">
+              <h2>Contact</h2>
+              <ul>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Share your ideas</a></li>
+                <li><a href="#">Report Abuse</a></li>
+                <li><a href="#">Sales</a></li>
+                <li><a href="#">System Status</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="join-us">
+            <h2>Join Our Newsletter</h2>
+            <p>
+              Stay up to date with our news, blog posts, and announcements by
+              subscribing to our Newsletter.
+            </p>
+            <div class="subscribe">
+              <input type="email" placeholder="Enter your email" />
+              <button>Subscribe</button>
+            </div>
+            <div class="socialLinks">
+              <a href="#" class="facebook"
+                ><ion-icon name="logo-facebook"></ion-icon
+              ></a>
+              <a href="#" class="twitter"
+                ><ion-icon name="logo-twitter"></ion-icon
+              ></a>
+              <a href="#" class="linkedin"
+                ><ion-icon name="logo-linkedin"></ion-icon
+              ></a>
+              <a href="#" class="instagram"
+                ><ion-icon name="logo-instagram"></ion-icon
+              ></a>
+              <a href="#" class="youtube"
+                ><ion-icon name="logo-youtube"></ion-icon
+              ></a>
+              <a href="#" class="github"
+                ><ion-icon name="logo-github"></ion-icon
+              ></a>
+            </div>
+          </div>
+          <div class="footer-end">
+            <div class="subfooter-left">
+              <div class="copyRight">
+                ©
+                <span class="year"></span>
+                , made with ❤️ by
+                <span class="nameAuthor">AmmarAli</span>
+              </div>
+            </div>
+            <div class="subfooter-right">
+              <a href="#">Privacy Policy</a>
+              <span>|</span>
+              <a href="#">Cookies</a>
+              <span>|</span>
+              <a href="#">Legal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="code.js"></script>
+  </body>
+</html>

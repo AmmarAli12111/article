@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" class="hydrated">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="This website shows some articles about
+    closures in JavaScript.Closure,It makes it possible for a
+    function to have 'private' variables"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/content.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <title>Article</title>
+  </head>
+  <body id="article" class="module">
+    <div class="header">
+      <div class="container">
+        <a href="index.html" aria-label="Article"
+          ><img class="logo" src="images/logo.png" alt=""
+        /></a>
+        <div class="icon-bar"></div>
+        <div class="navigation">
+          <ul class="links">
+            <li class="home"><a class="" href="index.html">Home</a></li>
+            <li class="arrow article">
+              <button class="articl-link">Articles</button>
+              <div class="another-links">
+                <ul class="list-one">
+                  <li>
+                    <a
+                      href="introduction.html"
+                      aria-label="to read introduction programming artilce click here"
+                      >Introduction in Programming</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="closures.html"
+                      aria-label="to read closures artilce click here"
+                      >Closures</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="module"
+                      href="module.html"
+                      aria-label="to read module design pattern artilce click here"
+                      >Module Design Pattern</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="hoisting.html"
+                      aria-label="to read hoisting artilce click here"
+                      >Hoisting</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="contact"><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="acount-side">
+            <button class="sign-up">Sign up</button>
+            <div class="search">
+              <input type="search" placeholder="Search" />
+              <ion-icon name="search-outline"></ion-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="allContent">
+      <div class="container">
+        <div class="content">
+          <div class="article">
+            <div class="concept">
+              <div class="flexOne">
+                <h1>Module Pattern in JavaScript</h1>
+              </div>
+              <p>Published on january 30, 2023</p>
+              <button>JavaScript</button>
+              <div class="aboutAuthor">
+                <span class="author">A</span>
+                <div class="description">
+                  <span>By <span>AmmarAli</span></span>
+                  <span>Frontend Web Developer </span>
+                </div>
+              </div>
+              <img src="images/shuffle-05.jpg" alt="" />
+              <h2>What is Module Pattern ?</h2>
+              <p class="paragraph">
+                The Module Pattern is one of the important patterns in
+                JavaScript. It is a commonly used Design Pattern which is used
+                to wrap a set of variables and functions together in a single
+                scope.
+              </p>
+              <p class="paragraph">
+                It is used to define objects and specify the variables and the
+                functions that can be accessed from outside the scope of the
+                function.We expose certain properties and function as public and
+                can also restrict the scope of properties and functions within
+                the object itself, making them private.This means that those
+                variables cannot be accessed outside the scope of the
+                function.We can achieve data hiding an abstraction using this
+                pattern
+              </p>
+              <p class="paragraph">
+                Let's look for the simple implementation of Module Pattern with
+                only public fields:
+              </p>
+              <div class="aboutCode">
+                <pre><code><span class="Keyword">function</span> <span class="function">EmployeeDetails</span><span class="punctuation">() {</span>
+  <span class="Keyword">var</span> name = <span class="string">"Mayank"</span><span class="punctuation">;</span>
+  <span class="Keyword">var</span> age = <span class="string">30</span><span class="punctuation">;</span>
+  <span class="Keyword">var</span> designation = <span class="string">"Developer"</span><span class="punctuation">;</span>
+
+  <span class="Keyword">return</span> <span class="punctuation">{</span>
+    <span class="function">name</span><span class="punctuation">:</span> name<span class="punctuation">,</span>
+    <span class="function">age</span><span class="punctuation">:</span> age<span class="punctuation">,</span>
+    <span class="function">designation</span><span class="punctuation">:</span> designation<span class="punctuation">,</span>
+  <span class="punctuation">};</span>
+<span class="punctuation">}</span>
+
+<span class="Keyword">var</span> newEmployee = <span class="function">EmployeeDetails</span><span class="punctuation">();</span>
+
+<span class="Keyword">var</span> userName = newEmployee<span class="punctuation">.</span><span class="function">name</span><span class="punctuation">;</span>
+<span class="Keyword">var</span> userAge = newEmployee<span class="punctuation">.</span><span class="function">age</span><span class="punctuation">;</span>
+<span class="Keyword">var</span> userDesignation = newEmployee<span class="punctuation">.</span><span class="function">designation</span><span class="punctuation">;</span></code></pre>
+                <div class="copyBtn">Copy</div>
+              </div>
+              <p class="paragraph">
+                The code contains the function which defines a certain variable
+                and returns those variables back from the function. The values
+                that are returned on function call is saved as an object literal
+                in the variable newEmployee. We are specifying the key-value
+                pair that need to be returned. This is one of the simple
+                implementations of Module Pattern. We can access the properties
+                <span class="importantWord">name</span>,
+                <span class="importantWord">age</span>,
+                <span class="importantWord">designation</span> from the object
+                returned. In the above code, we can access all the properties
+                defined by the object since they are exposed from the function
+                call.
+              </p>
+              <p class="paragraph">
+                We will now expand the above code to define some variables that
+                are not accessible outside the scope of the Module Function.
+              </p>
+              <div class="aboutCode">
+                <pre><code><span class="Keyword">function</span> <span class="function">EmployeeDetails</span><span class="punctuation">() {</span>
+  <span class="Keyword">var</span> name = <span class="string">"Mayank"</span><span class="punctuation">;</span>
+  <span class="Keyword">var</span> age = <span class="string">30</span><span class="punctuation">;</span>
+  <span class="Keyword">var</span> designation = <span class="string">"Developer"</span><span class="punctuation">;</span>
+  <span class="Keyword">var</span> salary = <span class="string">10000</span><span class="punctuation">;</span>
+
+  <span class="Keyword">return</span> <span class="punctuation">{</span>
+    <span class="function">name</span><span class="punctuation">:</span> name<span class="punctuation">,</span>
+    <span class="function">age</span><span class="punctuation">:</span> age<span class="punctuation">,</span>
+    <span class="function">designation</span><span class="punctuation">:</span> designation<span class="punctuation">,</span>
+  <span class="punctuation">};</span>
+<span class="punctuation">}</span>
+
+<span class="Keyword">var</span> newEmployee = <span class="function">EmployeeDetails</span><span class="punctuation">();</span>
+
+<span class="punctuation">// This will result in "undefined" value</span>
+<span class="Keyword">var</span> userName = newEmployee<span class="punctuation">.</span><span class="function">salary</span><span class="punctuation">;</span></code></pre>
+                <div class="copyBtn">Copy</div>
+              </div>
+              <h2>Data Hiding with the Module Pattern</h2>
+              <p class="paragraph">
+                The code above creates another variable
+                <span class="importantWord">salary</span>, this variable is not
+                exposed outside the
+                <span class="importantWord">EmployeeDetails</span> function,
+                making it unavailable for the
+                <span class="importantWord">newEmployee</span> Object. This
+                <span class="importantWord">salary</span> can now be seen as a
+                private variable that can be accessed only from the function. It
+                is not available outside.
+              </p>
+              <p class="paragraph">
+                Now let’s see how we can use the salary value without needing to
+                expose it publicly:
+              </p>
+              <div class="aboutCode">
+                <pre><code><span class="Keyword">function</span> <span class="function">EmployeeDetails</span><span class="punctuation">() {</span>
+  <span class="Keyword">var</span> name = <span class="string">"Mayank"</span><span class="punctuation">;</span>
+  <span class="Keyword">var</span> age = <span class="string">30</span><span class="punctuation">;</span>
+  <span class="Keyword">var</span> designation = <span class="string">"Developer"</span><span class="punctuation">;</span>
+  <span class="Keyword">var</span> salary = <span class="string">10000</span><span class="punctuation">;</span>
+
+  <span class="Keyword">var</span> calculateBonus = <span class="Keyword">function</span><span class="punctuation">(</span>amount<span class="punctuation">) {</span>
+    salary = salary + amount<span class="punctuation">;</span>
+  <span class="punctuation">}</span>
+
+  <span class="Keyword">return</span> <span class="punctuation">{</span>
+    <span class="function">name</span><span class="punctuation">:</span> name<span class="punctuation">,</span>
+    <span class="function">age</span><span class="punctuation">:</span> age<span class="punctuation">,</span>
+    <span class="function">designation</span><span class="punctuation">:</span> designation<span class="punctuation">,</span>
+    <span class="function">calculateBonus</span><span class="punctuation">:</span> calculateBonus<span class="punctuation">,</span>
+  <span class="punctuation">};</span>
+<span class="punctuation">}</span>
+
+<span class="Keyword">var</span> newEmployee = <span class="function">EmployeeDetails</span><span class="punctuation">();</span>
+
+<span class="Keyword">var</span> userName = newEmployee<span class="punctuation">.</span><span class="function">calculateBonus</span><span class="punctuation">(</span><span class="string">1000</span><span class="punctuation">);</span></code></pre>
+                <div class="copyBtn">Copy</div>
+              </div>
+              <p class="paragraph">
+                The function above uses the private variable
+                <span class="importantWord">salary</span> to calculate the value
+                of <span class="importantWord">bonus</span> that need to be
+                provided to the employee. So although the
+                <span class="importantWord">salary</span> cannot be accessed
+                directly using newEmployee, it still remains in the scope so
+                that other components can use this value for other calculations.
+                Although the variable is
+                <span class="importantWord">private</span> to the scope of
+                EmployeeDetails functions, even after the function has executed,
+                the <span class="importantWord">salary</span>
+                variable is retained in the scope so that other functions can
+                use these values to provide further functionality.
+              </p>
+              <p class="paragraph">
+                The salary here is a sort of private variable that can be
+                accessed by other functions that are exposed publicly from the
+                function. It can be equivalent to a private hidden variable that
+                is accessible by its member function. Hence providing the idea
+                of data hiding.
+              </p>
+              <p class="paragraph">
+                Use Module pattern for the following benefits:
+              </p>
+              <p class="paragraph">
+                -Maintainability: Module Patterns enable better maintainability
+                since all the related code can be encapsulated inside a single
+                logical block. These logically independent blocks are relatively
+                easier to update.
+              </p>
+              <p class="paragraph">
+                -Reusability: We single unit of code can be reused across the
+                entire application. Functionality enclosed as a module can be
+                reused and we do not need to define the same functions at
+                multiple points.
+              </p>
+              <div class="box">
+                <div class="lineOne">
+                  <h2>Was this helpful?</h2>
+                  <div>
+                    <div class="opinion">
+                      <a class="btns" href="#">Yes</a>
+                      <a class="btns" href="#">No</a>
+                    </div>
+                    <div class="socialMedia">
+                      <a class="twitter" href="#">
+                        <ion-icon name="logo-twitter"></ion-icon
+                      ></a>
+                      <a class="facbook" href="#">
+                        <ion-icon name="logo-facebook"></ion-icon
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+                <div class="lineTwo">
+                  <h2>Still looking for an answer?</h2>
+                  <div class="flex">
+                    <a class="btns" href="#"> Ask a question</a>
+                    <a class="btns" href="#">Search for more help</a>
+                  </div>
+                </div>
+              </div>
+              <div class="boxComments"></div>
+            </div>
+          </div>
+          <div class="rightSide">
+            <div class="about-righSide">
+              <div class="quote">
+                <p>
+                  When action grows unprofitable, gather information;when
+                  information grows unprofitable, sleep.
+                </p>
+                <span class="author"
+                  >-Ursula K.Le Guin,
+                  <span>The Left Hand of Darkness</span></span
+                >
+              </div>
+              <div class="popularTopics">
+                <div class="relatedTopics">
+                  <h3>RELATED</h3>
+                  <a href="#">An Introduction to Closure</a>
+                  <a href="#">An Introduction to Closure</a>
+                </div>
+                <div class="Topics">
+                  <h3>Popular Topics</h3>
+                  <ul>
+                    <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">TypeScript</a></li>
+                    <li><a href="#">React</a></li>
+                    <li><a href="#">Python</a></li>
+                    <li><a href="#">MySQL</a></li>
+                    <li><a href="#">Bootstrap</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Linux Basics</a></li>
+                    <li><a href="#">SASS</a></li>
+                    <li><a href="#">ECMAScript</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div class="about-footer">
+          <div class="footerLinks">
+            <div class="tutorials">
+              <h2>Tutorials</h2>
+              <ul>
+                <li><a href="#">JavaScript Tutorial</a></li>
+                <li><a href="#">Python 3 Tutorial</a></li>
+                <li><a href="#">C++ Tutorial</a></li>
+                <li><a href="#">Kotlin Tutorial</a></li>
+                <li><a href="#">C# Tutorial</a></li>
+                <li><a href="#">Java Tutorial</a></li>
+                <li><a href="#">C Tutorial</a></li>
+                <li><a href="#">SQL Tutorial</a></li>
+              </ul>
+            </div>
+            <div class="articles">
+              <h2>Articles</h2>
+              <ul>
+                <li><a href="#">Introduction to Programming</a></li>
+                <li><a href="#">Closures</a></li>
+                <li><a href="#">Module Design Pattern</a></li>
+                <li><a href="#">Let</a></li>
+                <li><a href="#">Hoisting</a></li>
+              </ul>
+            </div>
+            <div class="company">
+              <h2>Company</h2>
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Feature Request</a></li>
+                <li><a href="#">Advertising</a></li>
+                <li><a href="#">Blog</a></li>
+              </ul>
+            </div>
+            <div class="contact">
+              <h2>Contact</h2>
+              <ul>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Share your ideas</a></li>
+                <li><a href="#">Report Abuse</a></li>
+                <li><a href="#">Sales</a></li>
+                <li><a href="#">System Status</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="join-us">
+            <h2>Join Our Newsletter</h2>
+            <p>
+              Stay up to date with our news, blog posts, and announcements by
+              subscribing to our Newsletter.
+            </p>
+            <div class="subscribe">
+              <input type="email" placeholder="Enter your email" />
+              <button>Subscribe</button>
+            </div>
+            <div class="socialLinks">
+              <a href="#" class="facebook"
+                ><ion-icon name="logo-facebook"></ion-icon
+              ></a>
+              <a href="#" class="twitter"
+                ><ion-icon name="logo-twitter"></ion-icon
+              ></a>
+              <a href="#" class="linkedin"
+                ><ion-icon name="logo-linkedin"></ion-icon
+              ></a>
+              <a href="#" class="instagram"
+                ><ion-icon name="logo-instagram"></ion-icon
+              ></a>
+              <a href="#" class="youtube"
+                ><ion-icon name="logo-youtube"></ion-icon
+              ></a>
+              <a href="#" class="github"
+                ><ion-icon name="logo-github"></ion-icon
+              ></a>
+            </div>
+          </div>
+          <div class="footer-end">
+            <div class="subfooter-left">
+              <div class="copyRight">
+                ©
+                <span class="year"></span>
+                , made with ❤️ by
+                <span class="nameAuthor">AmmarAli</span>
+              </div>
+            </div>
+            <div class="subfooter-right">
+              <a href="#">Privacy Policy</a>
+              <span>|</span>
+              <a href="#">Cookies</a>
+              <span>|</span>
+              <a href="#">Legal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="code.js"></script>
+  </body>
+</html>
